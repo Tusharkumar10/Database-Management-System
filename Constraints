@@ -1,0 +1,47 @@
+/************ constraints **********/
+
+ /*Column level constraint : -> */
+CREATE table c 
+(
+columnId number primary key,
+columnName VARCHAR2(10)
+)
+
+/*Row level constraint : -> */
+create table r 
+(
+row1Id NUMBER , primary key(row1Id),
+rowName VARCHAR2(10)
+)
+
+/* Reference key constraint*/
+
+/*Parent table */
+CREATE table student (
+studentId NUMBER constraints stu_id_pk primary key
+
+);
+
+/* Child table */
+CREATE table marks(  
+studentId NUMBER constraints stu_id_fk references student(studentId),
+marksScored number(5,2)
+);
+
+INSERT into student (studentId) VALUES(2);
+INSERT into marks(studentId,marksScored) VALUES(2,75.5);
+SELECT * FROM student ;
+SELECT * FROM marks ;
+
+/* CHECK constraint*/ 
+create table check_cons 
+(
+pId number ,
+gender char(1) constraint ch_gen_ck1 check(gender IN ('M','F','T'))
+)
+
+insert into check_cons(pId , gender) VALUES (1,'M')
+insert into check_cons(pId , gender) VALUES (2,'F')
+insert into check_cons(pId , gender) VALUES (3,'T')
+SELECT * from check_cons /* To display all column's data */
+SELECT gender from check_cons /* To display single column's data */
