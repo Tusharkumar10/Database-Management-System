@@ -1,0 +1,18 @@
+// Functions
+
+SELECT LOWER('AAAAA') , UPPER('bbbbbb')FROM dual; // Output = aaaaa  BBBBBB
+SELECT * FROM dual;
+SELECT abs(-11.3) FROM dual;  // Output = 11.3
+SELECT ROUND(11.50) from dual;  // Output = 12
+SELECT CEIL(11.4) from dual;  // it will give upcoming value = 12
+SELECT FLOOR(11.8) from dual;  // it will give previous value = 11
+SELECT LENGTH('tushar')from dual; //Output = 6
+SELECT CONCAT('tushar ','kumar') from dual; // Output = tushar kumar
+SELECT SUBSTR('Database', -1,5)from dual;   // Output = e
+
+// Conversion FUNCTIONS
+
+SELECT TO_CHAR(949,999.99) from dual;   // Output = 949.00 in character
+SELECT TO_DATE('jan-24-2014','mon-dd-yyyy' ) from dual;  // Output = 2014-01-24 in number
+SELECT TO_NUMBER('123') FROM dual  // Output =123 in number
+
